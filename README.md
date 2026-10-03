@@ -31,3 +31,10 @@ The problem: you need to know what network interfaces a host has, with addresses
 - `enumerate_interfaces() -> list[InterfaceInfo]`
 - `InterfaceInfo` (frozen dataclass: `name`, `address`, `netmask`, `flags`, `family`)
 - `InterfaceFlag` (`IntFlag`: `UP`, `BROADCAST`, `LOOPBACK`, `POINTOPOINT`, `RUNNING`, `MULTICAST`)
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
