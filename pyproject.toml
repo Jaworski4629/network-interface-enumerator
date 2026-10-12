@@ -1,6 +1,6 @@
 [project]
 name = "network-interface-enumerator"
-version = "0.1.0"
+version = "0.1.1"
 description = "Wrap ioctl or getifaddrs to list interface names, addresses, netmasks, and flags in a portable structure."
 requires-python = ">=3.10"
 dependencies = []
